@@ -1,0 +1,28 @@
+/*custom module
+ * for GIT test only
+ */
+function ei_custom_menu() {
+    $items['error_403'] = array(
+        'title' => '403',
+        'page callback' => 'ei_custom_error',
+        'page arguments' => array('403.html', '403 Forbidden'),
+        'access callback' => TRUE
+    );
+
+    $items['error_404'] = array(
+        'title' => '404',
+        'page callback' => 'ei_custom_error',
+        'page arguments' => array('404.html', '404 Not Found'),
+        'access callback' => TRUE
+    );
+
+    $items['ei_custom_ne/autocomplete/%'] = array(
+        'title' => 'EI Custom Autocomplete',
+        'page callback' => 'ei_custom_ne_autocomplete',
+        'page arguments' => array(2),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK
+    );
+
+    return $items;
+}
